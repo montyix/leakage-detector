@@ -1,0 +1,112 @@
+# Pipeline Leak Detection App - Installation Instructions
+
+This document provides instructions for importing, building, and running the Pipeline Leak Detection Android application. 
+
+## Project Overview
+
+This Android application is designed to connect to Arduino-based flow rate sensors via Bluetooth to detect oil pipeline leakages using Bernoulli's Equation. The system analyzes pressure differences between multiple points to detect and locate leaks in pipelines.
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed on your development machine:
+
+1. **Android Studio** - Version 4.2 or higher
+2. **Java Development Kit (JDK)** - Version 8 or higher 
+3. **Android SDK** - API level 21 (Android 5.0) or higher
+4. **Git** (optional) - For cloning the repository
+
+## Importing the Project
+
+Follow these steps to import the project into Android Studio:
+
+1. Extract the project ZIP file to a location of your choice
+2. Open Android Studio
+3. Select "Open an Existing Project"
+4. Navigate to the extracted 'PipelineDetector' folder and click "OK"
+5. Wait for Android Studio to sync the project with Gradle files
+6. If prompted to update the Gradle version, it's recommended to accept the update
+
+## Building the Project
+
+Once the project is imported, you can build it by following these steps:
+
+1. Wait for the initial Gradle sync to complete
+2. Select "Build" → "Make Project" from the menu
+3. Alternatively, use the keyboard shortcut Ctrl+F9 (Windows/Linux) or Cmd+F9 (Mac)
+4. Wait for the build to complete
+
+## Running the Application
+
+You can run the application in two ways:
+
+### 1. Using a Physical Android Device
+
+1. Enable USB debugging on your Android device:
+   - Go to "Settings" → "About phone" → Tap "Build number" 7 times to enable developer options
+   - Go back to "Settings" → "Developer options" → Enable "USB debugging"
+
+2. Connect your Android device to your computer using a USB cable
+
+3. In Android Studio, select your device from the dropdown menu in the toolbar
+
+4. Click the "Run" button (green triangle) in the toolbar or press Shift+F10 (Windows/Linux) or Control+R (Mac)
+
+### 2. Using an Android Emulator
+
+1. In Android Studio, go to "Tools" → "AVD Manager"
+
+2. Create a new virtual device if none exist, selecting a device with API level 21 or higher
+
+3. Select your virtual device from the dropdown menu in the toolbar
+
+4. Click the "Run" button (green triangle) in the toolbar
+
+## Project Structure
+
+The application consists of the following main components:
+
+- **MainActivity**: The entry point of the application, handles Bluetooth connection
+- **GraphActivity**: Displays real-time pressure graph using MPAndroidChart
+- **StateActivity**: Shows visual representation of pipeline state
+- **HistoryActivity**: Displays log of past leak events
+- **PipeLeakageDetector**: Core algorithm for detecting leaks using Bernoulli's equation
+- **BluetoothService**: Handles Bluetooth communication with Arduino devices
+- **JSONDataManager**: Manages storage and retrieval of leak event data
+
+## Testing the Application
+
+For testing purposes, the application includes simulation features that allow you to test the functionality without connecting to actual hardware:
+
+1. On the main screen, click "Connect to Device" to simulate a Bluetooth connection
+2. Click "View Live Graph" to see the simulated pressure data
+3. The app will randomly simulate leak conditions to demonstrate detection capabilities
+4. Navigate between different screens to explore the UI and functionality
+
+## Troubleshooting
+
+Common issues and solutions:
+
+1. **Gradle sync fails**:
+   - Check your internet connection
+   - Go to "File" → "Sync Project with Gradle Files"
+
+2. **Missing SDK components**:
+   - Open the SDK Manager in Android Studio
+   - Install any missing components as prompted
+
+3. **App doesn't install on device**:
+   - Ensure USB debugging is enabled
+   - Try a different USB cable or port
+   - Make sure your device has sufficient storage space
+
+4. **Bluetooth connection issues**:
+   - Ensure Bluetooth is enabled on your device
+   - Verify that the required permissions are granted to the app
+
+## Contact and Support
+
+For questions, feedback, or support, please refer to the contact information in the README.md file.
+
+---
+
+© 2025 Pipeline Monitoring System
